@@ -4,22 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joshua Ishimwe — Full-Stack Developer & Designer</title>
-  <meta name="description"
-    content="Portfolio of Joshua Ishimwe — Full-Stack Developer & Designer crafting digital experiences that blend beautiful design with powerful engineering." />
-  <meta name="keywords" content="developer, designer, portfolio, full-stack, web development, UI/UX" />
-  <meta property="og:title" content="Joshua Ishimwe — Full-Stack Developer & Designer" />
-  <meta property="og:description"
-    content="Crafting digital experiences that blend beautiful design with powerful engineering." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <title>Blog — Joshua Ishimwe</title>
+  <meta name="description" content="Read Joshua Ishimwe's articles on web development, performance optimization, and AI." />
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -33,7 +24,7 @@
         <span class="logo-text">Joshua<span class="gradient-text">Ishimwe</span></span>
       </a>
       <ul class="navbar-links" id="navLinks">
-        <li><a href="index.html" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="index.html" class="nav-link" data-section="home">Home</a></li>
         <li><a href="about.html" class="nav-link" data-section="about">About</a></li>
         <li><a href="projects.html" class="nav-link" data-section="projects">Projects</a></li>
         <li><a href="skills.html" class="nav-link" data-section="skills">Skills</a></li>
@@ -44,14 +35,11 @@
       </ul>
       <div class="navbar-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5" />
-            <path
-              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
           </svg>
-          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         </button>
@@ -63,58 +51,49 @@
     </div>
   </nav>
 
-  <!-- ==================== HERO SECTION ==================== -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="hero-gradient"></div>
-      <div class="hero-particles" id="heroParticles"></div>
-      <div class="hero-grid"></div>
+  <!-- ==================== PAGE HERO ==================== -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Blog</span>
+      </div>
+      <span class="section-tag">Latest Articles</span>
+      <h1 class="section-title">From My <span class="gradient-text">Blog</span></h1>
+      <p class="section-subtitle">Thoughts, tutorials, and insights on web development</p>
     </div>
-    <div class="hero-content">
-      <div class="hero-badge animate-on-scroll">
-        <span class="badge-dot"></span>
-        Available for new projects
+  </div>
+
+  <!-- ==================== BLOG CONTENT ==================== -->
+  <section class="section page-section" id="blog">
+    <div class="container">
+      <div class="blog-filter-bar animate-on-scroll" id="blogFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Engineering">Engineering</button>
+        <button class="filter-btn" data-filter="Performance">Performance</button>
+        <button class="filter-btn" data-filter="AI & ML">AI & ML</button>
+        <button class="filter-btn" data-filter="Design">Design</button>
       </div>
-      <h1 class="hero-title animate-on-scroll">
-        Hi, I'm <span class="gradient-text">Joshua</span>
-      </h1>
-      <div class="hero-typing-wrapper animate-on-scroll">
-        <span class="hero-typing" id="heroTyping"></span>
-        <span class="typing-cursor">|</span>
-      </div>
-      <p class="hero-description animate-on-scroll">
-        Crafting digital experiences that blend beautiful design with powerful engineering. I build modern web
-        applications that users love.
-      </p>
-      <div class="hero-actions animate-on-scroll">
-        <a href="projects.html" class="btn btn-primary btn-lg">
-          <span>View Projects</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
-        <a href="contact.html" class="btn btn-outline btn-lg">
-          <span>Get In Touch</span>
-        </a>
-      </div>
-      <div class="hero-stats animate-on-scroll">
-        <div class="stat-item">
-          <span class="stat-number" data-count="4">0</span><span class="stat-suffix">+</span>
-          <span class="stat-label">Years Exp.</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
-          <span class="stat-label">Projects</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number" data-count="30">0</span><span class="stat-suffix">+</span>
-          <span class="stat-label">Happy Clients</span>
-        </div>
+      <div class="blog-grid" id="blogGrid">
+        <!-- Blog cards injected by JS -->
       </div>
     </div>
   </section>
+
+  <!-- ==================== BLOG POST MODAL ==================== -->
+  <div class="modal-overlay" id="blogModal">
+    <div class="modal-content modal-content-lg">
+      <button class="modal-close" id="blogModalClose" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="modal-body blog-content" id="blogModalBody">
+        <!-- Blog post content injected by JS -->
+      </div>
+    </div>
+  </div>
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
@@ -151,12 +130,10 @@
   <!-- ==================== AI CHAT WIDGET ==================== -->
   <div class="chat-widget" id="chatWidget">
     <button class="chat-toggle" id="chatToggle" aria-label="Open AI assistant">
-      <svg class="chat-icon-open" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2">
+      <svg class="chat-icon-open" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
       </svg>
-      <svg class="chat-icon-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" style="display:none">
+      <svg class="chat-icon-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
         <path d="M18 6L6 18M6 6l12 12" />
       </svg>
       <span class="chat-badge">AI</span>
@@ -178,9 +155,7 @@
       </div>
       <div class="chat-messages" id="chatMessages">
         <div class="chat-message assistant">
-          <div class="chat-bubble">
-            👋 Hi! I'm Joshua's AI assistant. Ask me anything about his skills, projects, experience, or availability!
-          </div>
+          <div class="chat-bubble">👋 Hi! I'm Joshua's AI assistant. Ask me anything about his skills, projects, experience, or availability!</div>
         </div>
       </div>
       <div class="chat-suggestions" id="chatSuggestions">

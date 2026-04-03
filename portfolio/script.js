@@ -1,5 +1,5 @@
 /**
- * Portfolio Main Script
+ * Portfolio Main Script — Multi-Page Architecture
  * Handles all interactivity, data rendering, and animations
  */
 
@@ -60,15 +60,154 @@ const projects = [
 ];
 
 const skills = [
-  { category: "Frontend", items: [{ name: "React/Next.js", level: 95 }, { name: "TypeScript", level: 92 }, { name: "HTML/CSS", level: 95 }, { name: "Tailwind", level: 90 }], icon: "🎨" },
-  { category: "Backend", items: [{ name: "Node.js", level: 90 }, { name: "Python", level: 85 }, { name: "PostgreSQL", level: 88 }, { name: "REST APIs", level: 92 }], icon: "⚙️" },
-  { category: "Tools", items: [{ name: "Git/GitHub", level: 95 }, { name: "Figma", level: 85 }, { name: "Docker", level: 78 }, { name: "AWS", level: 82 }], icon: "🛠️" }
+  {
+    category: "Frontend",
+    items: [
+      { name: "React / Next.js", level: 95 },
+      { name: "TypeScript", level: 92 },
+      { name: "HTML5 / CSS3 / SASS", level: 96 },
+      { name: "Tailwind CSS", level: 90 },
+      { name: "Vue.js / Nuxt", level: 82 },
+      { name: "Redux / Zustand", level: 88 }
+    ],
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>'
+  },
+  {
+    category: "Backend",
+    items: [
+      { name: "Node.js / Express", level: 93 },
+      { name: "Python / Django / Flask", level: 88 },
+      { name: "Java / Spring Boot", level: 80 },
+      { name: "REST & GraphQL APIs", level: 92 },
+      { name: "C / C++", level: 85 },
+      { name: "Go (Golang)", level: 72 }
+    ],
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>'
+  },
+  {
+    category: "Database & Storage",
+    items: [
+      { name: "PostgreSQL", level: 90 },
+      { name: "MongoDB", level: 88 },
+      { name: "MySQL", level: 85 },
+      { name: "Redis", level: 80 },
+      { name: "Firebase / Supabase", level: 86 },
+      { name: "Prisma / Sequelize ORM", level: 84 }
+    ],
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>'
+  },
+  {
+    category: "DevOps & Cloud",
+    items: [
+      { name: "Docker / Kubernetes", level: 82 },
+      { name: "AWS (EC2, S3, Lambda)", level: 84 },
+      { name: "CI/CD (GitHub Actions)", level: 88 },
+      { name: "Linux / Bash", level: 90 },
+      { name: "Nginx / Caddy", level: 78 },
+      { name: "Git / GitHub / GitLab", level: 95 }
+    ],
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>'
+  },
+  {
+    category: "Mobile Development",
+    items: [
+      { name: "React Native", level: 88 },
+      { name: "Flutter / Dart", level: 78 },
+      { name: "iOS (Swift basics)", level: 65 },
+      { name: "Android (Kotlin basics)", level: 68 },
+      { name: "Expo", level: 85 },
+      { name: "App Store Deployment", level: 80 }
+    ],
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>'
+  },
+  {
+    category: "Embedded Systems & IoT",
+    items: [
+      { name: "Arduino / ESP32", level: 88 },
+      { name: "Raspberry Pi", level: 85 },
+      { name: "MQTT / IoT Protocols", level: 80 },
+      { name: "Embedded C / C++", level: 84 },
+      { name: "Sensor Integration", level: 82 },
+      { name: "PCB Design (KiCad)", level: 70 }
+    ],
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>'
+  },
+  {
+    category: "AI & Machine Learning",
+    items: [
+      { name: "TensorFlow / Keras", level: 75 },
+      { name: "Python (NumPy, Pandas)", level: 88 },
+      { name: "Natural Language Processing", level: 72 },
+      { name: "OpenAI / LLM Integration", level: 80 },
+      { name: "Computer Vision (OpenCV)", level: 68 },
+      { name: "Data Visualization (Matplotlib)", level: 82 }
+    ],
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"/><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93"/><path d="M12 18a4 4 0 0 1-4-4c0-1.95 1.4-3.58 3.25-3.93"/><path d="M12 18a4 4 0 0 0 4-4c0-1.95-1.4-3.58-3.25-3.93"/><circle cx="12" cy="12" r="2"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/></svg>'
+  },
+  {
+    category: "Design & Creative Tools",
+    items: [
+      { name: "Figma", level: 90 },
+      { name: "Adobe XD", level: 82 },
+      { name: "Adobe Photoshop", level: 78 },
+      { name: "Blender (3D basics)", level: 60 },
+      { name: "UI/UX Design Principles", level: 88 },
+      { name: "Wireframing & Prototyping", level: 92 }
+    ],
+    icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>'
+  }
 ];
 
 const experience = [
-  { role: "Senior Full-Stack Developer", company: "TechNova Labs", date: "Jan 2023 - Present", desc: "Leading development of enterprise SaaS products serving 100K+ users.", tech: ["Next.js", "TypeScript", "Node.js", "AWS"] },
-  { role: "Full-Stack Developer", company: "Pixel & Code Agency", date: "Mar 2021 - Dec 2022", desc: "Built custom web applications and e-commerce platforms for high-profile clients.", tech: ["React", "Vue.js", "Python", "Shopify"] },
-  { role: "Frontend Developer", company: "StartupGrid", date: "Jun 2019 - Feb 2021", desc: "Core frontend developer for a fast-growing B2B SaaS startup.", tech: ["React", "Redux", "WebSocket"] }
+  {
+    role: "Senior Full-Stack Software Engineer",
+    company: "TechNova Labs",
+    date: "Jan 2023 - Present",
+    desc: "Leading architecture and development of enterprise SaaS products serving 100K+ users. Designing microservices, optimizing database performance, and mentoring a team of 6 developers. Reduced API latency by 40% and implemented CI/CD pipelines for zero-downtime deployments.",
+    tech: ["Next.js", "TypeScript", "Node.js", "AWS", "Docker", "PostgreSQL"]
+  },
+  {
+    role: "AI & Full-Stack Developer",
+    company: "InnovateTech Rwanda",
+    date: "Jul 2022 - Dec 2022",
+    desc: "Built AI-powered web applications integrating OpenAI APIs and custom ML models. Developed a smart customer support chatbot that reduced response times by 60%. Created dashboards for real-time analytics and trained models for sentiment analysis on local language datasets.",
+    tech: ["Python", "TensorFlow", "React", "FastAPI", "OpenAI API", "MongoDB"]
+  },
+  {
+    role: "Embedded Systems & IoT Engineer",
+    company: "SmartEdge Technologies",
+    date: "Jun 2022 - Dec 2022",
+    desc: "Designed and developed firmware for IoT devices using ESP32 and ARM-based microcontrollers. Built real-time sensor data pipelines, integrated MQTT communication protocols, and developed a cloud dashboard for remote device monitoring and OTA updates.",
+    tech: ["C/C++", "ESP32", "MQTT", "Raspberry Pi", "Python", "KiCad"]
+  },
+  {
+    role: "Full-Stack Developer",
+    company: "Pixel & Code Agency",
+    date: "Mar 2021 - May 2022",
+    desc: "Built custom web applications, e-commerce platforms, and RESTful APIs for high-profile clients across healthcare, fintech, and retail sectors. Delivered 15+ projects on time with a focus on performance, accessibility, and scalable architecture.",
+    tech: ["React", "Vue.js", "Python", "Django", "MongoDB", "Shopify"]
+  },
+  {
+    role: "UI/UX Designer & Frontend Developer",
+    company: "CreativeFlow Studio",
+    date: "Jan 2021 - Feb 2021",
+    desc: "Designed user interfaces and interactive prototypes for mobile and web applications. Conducted user research, created design systems in Figma, and implemented pixel-perfect responsive frontends. Improved client conversion rates by 35% through UX-driven redesigns.",
+    tech: ["Figma", "Adobe XD", "HTML/CSS", "JavaScript", "SASS", "GSAP"]
+  },
+  {
+    role: "Software Developer & Hardware Prototyper",
+    company: "KLab Rwanda",
+    date: "Aug 2020 - Feb 2021",
+    desc: "Developed innovative solutions combining software and hardware prototyping. Built smart home automation systems, automated irrigation controllers, and contributed to open-source embedded projects. Collaborated with cross-functional teams on rapid prototyping.",
+    tech: ["Arduino", "React Native", "Firebase", "Embedded C", "3D Printing"]
+  },
+  {
+    role: "Junior Frontend Developer",
+    company: "StartupGrid",
+    date: "Jun 2019 - Jul 2020",
+    desc: "Core frontend developer for a fast-growing B2B SaaS startup. Implemented real-time features using WebSockets, built responsive dashboards, and improved Lighthouse performance scores from 45 to 92 across all product pages.",
+    tech: ["React", "Redux", "WebSocket", "SASS", "Figma"]
+  }
 ];
 
 const blog = [
@@ -88,20 +227,43 @@ const testimonials = [
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
-  initTyping();
   initNavbar();
   initScrollAnimations();
-  renderProjects("all");
-  renderSkills();
-  renderExperience();
-  renderBlog("all");
-  renderTestimonials();
-  initModalListeners();
-  initChatWidget();
-  initContactForm();
 
-  // Number counters
-  setTimeout(startCounters, 1000);
+  // Page enter animation
+  document.body.classList.add("page-enter");
+
+  // Conditional initialization based on which page we're on
+  if (document.getElementById("heroTyping")) {
+    initTyping();
+  }
+  if (document.getElementById("heroParticles")) {
+    setTimeout(startCounters, 1000);
+  }
+  if (document.getElementById("projectsGrid")) {
+    renderProjects("all");
+  }
+  if (document.getElementById("skillsGrid")) {
+    renderSkills();
+  }
+  if (document.getElementById("timeline")) {
+    renderExperience();
+  }
+  if (document.getElementById("blogGrid")) {
+    renderBlog("all");
+  }
+  if (document.getElementById("testimonialsTrack")) {
+    renderTestimonials();
+  }
+  if (document.getElementById("projectModal")) {
+    initModalListeners();
+  }
+  if (document.getElementById("chatWidget")) {
+    initChatWidget();
+  }
+  if (document.getElementById("contactForm")) {
+    initContactForm();
+  }
 });
 
 // ==========================================
@@ -111,7 +273,6 @@ function initTheme() {
   const toggleBtn = document.getElementById("themeToggle");
   const htmlEl = document.documentElement;
 
-  // Retrieve theme from local storage or set based on preferences
   const savedTheme = localStorage.getItem("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
@@ -121,12 +282,14 @@ function initTheme() {
     htmlEl.setAttribute("data-theme", prefersDark ? "dark" : "light");
   }
 
-  toggleBtn.addEventListener("click", () => {
-    const currentTheme = htmlEl.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    htmlEl.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-  });
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      const currentTheme = htmlEl.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      htmlEl.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    });
+  }
 }
 
 // ==========================================
@@ -168,12 +331,11 @@ function initTyping() {
 }
 
 // ==========================================
-// NAVIGATION & SCROLL
+// NAVIGATION & ACTIVE LINK
 // ==========================================
 function initNavbar() {
   const navbar = document.getElementById("navbar");
   const mobileToggle = document.getElementById("mobileToggle");
-  const navLinks = document.querySelectorAll(".nav-link");
 
   // Sticky Navbar style on scroll
   window.addEventListener("scroll", () => {
@@ -184,48 +346,41 @@ function initNavbar() {
       navbar.style.boxShadow = "none";
       navbar.style.background = "transparent";
     }
-    updateActiveLink();
   });
 
   // Mobile Menu Toggle
-  mobileToggle.addEventListener("click", () => {
-    navbar.classList.toggle("menu-open");
-  });
-
-  // Smooth Scroll
-  navLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      navbar.classList.remove("menu-open");
-      const targetId = link.getAttribute("href");
-      const targetSection = document.querySelector(targetId);
-
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop - 80,
-          behavior: "smooth"
-        });
-      }
+  if (mobileToggle) {
+    mobileToggle.addEventListener("click", () => {
+      navbar.classList.toggle("menu-open");
     });
-  });
+  }
+
+  // Set active nav link based on current page
+  setActiveNavLink();
 }
 
-function updateActiveLink() {
-  const sections = document.querySelectorAll("section");
+function setActiveNavLink() {
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split("/").pop() || "index.html";
   const navLinks = document.querySelectorAll(".nav-link");
 
-  let current = "";
+  const pageMap = {
+    "index.html": "home",
+    "": "home",
+    "about.html": "about",
+    "projects.html": "projects",
+    "skills.html": "skills",
+    "experience.html": "experience",
+    "blog.html": "blog",
+    "testimonials.html": "testimonials",
+    "contact.html": "contact"
+  };
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (pageYOffset >= sectionTop - 150) {
-      current = section.getAttribute("id");
-    }
-  });
+  const activeSection = pageMap[currentPage] || "home";
 
   navLinks.forEach(link => {
     link.classList.remove("active");
-    if (link.getAttribute("data-section") === current) {
+    if (link.getAttribute("data-section") === activeSection) {
       link.classList.add("active");
     }
   });
@@ -234,28 +389,37 @@ function updateActiveLink() {
 // ==========================================
 // SCROLL ANIMATIONS & COUNTERS
 // ==========================================
-function initScrollAnimations() {
-  const elements = document.querySelectorAll(".animate-on-scroll");
+// Global observer instance
+let scrollObserver = null;
 
-  const observer = new IntersectionObserver((entries) => {
+function initScrollAnimations() {
+  scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
 
-        // Trigger skill bars if in it
-        if (entry.target.classList.contains("section-header") && entry.target.closest("#skills")) {
+        // Trigger skill bars if visible
+        if (entry.target.classList.contains("skill-category")) {
           setTimeout(() => {
-            document.querySelectorAll(".skill-progress").forEach(bar => {
+            entry.target.querySelectorAll(".skill-progress").forEach(bar => {
               bar.style.width = bar.getAttribute("data-width") + "%";
             });
           }, 300);
         }
-
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.05, rootMargin: "0px 0px 50px 0px" });
 
-  elements.forEach(el => observer.observe(el));
+  observeNewElements();
+}
+
+// Re-observe all .animate-on-scroll elements (including dynamically injected ones)
+function observeNewElements() {
+  if (!scrollObserver) return;
+  document.querySelectorAll(".animate-on-scroll:not(.observed)").forEach(el => {
+    el.classList.add("observed");
+    scrollObserver.observe(el);
+  });
 }
 
 function startCounters() {
@@ -283,6 +447,7 @@ function startCounters() {
 // ==========================================
 function renderProjects(filterValue) {
   const grid = document.getElementById("projectsGrid");
+  if (!grid) return;
 
   const filtered = filterValue === "all"
     ? projects
@@ -322,6 +487,8 @@ function renderProjects(filterValue) {
 
 function renderSkills() {
   const grid = document.getElementById("skillsGrid");
+  if (!grid) return;
+
   grid.innerHTML = skills.map(cat => `
     <div class="skill-category animate-on-scroll">
       <div class="skill-category-header">
@@ -343,10 +510,15 @@ function renderSkills() {
       </div>
     </div>
   `).join('');
+
+  // Re-observe dynamically added elements
+  observeNewElements();
 }
 
 function renderExperience() {
   const timeline = document.getElementById("timeline");
+  if (!timeline) return;
+
   timeline.innerHTML = experience.map(exp => `
     <div class="timeline-item animate-on-scroll">
       <div class="timeline-dot"></div>
@@ -365,10 +537,14 @@ function renderExperience() {
       </div>
     </div>
   `).join('');
+
+  // Re-observe dynamically added elements
+  observeNewElements();
 }
 
 function renderBlog(filterValue) {
   const grid = document.getElementById("blogGrid");
+  if (!grid) return;
 
   const filtered = filterValue === "all"
     ? blog
@@ -403,6 +579,7 @@ function renderBlog(filterValue) {
 function renderTestimonials() {
   const track = document.getElementById("testimonialsTrack");
   const dots = document.getElementById("carouselDots");
+  if (!track || !dots) return;
 
   track.innerHTML = testimonials.map(t => `
     <div class="testimonial-card">
@@ -435,6 +612,8 @@ function initCarousel() {
   const dots = document.querySelectorAll(".carousel-dot");
   const prevBtn = document.getElementById("prevTestimonial");
   const nextBtn = document.getElementById("nextTestimonial");
+
+  if (!track || !prevBtn || !nextBtn) return;
 
   let currentIdx = 0;
 
@@ -473,8 +652,11 @@ function initCarousel() {
 // MODALS
 // ==========================================
 function initModalListeners() {
-  document.getElementById("modalClose").onclick = closeModals;
-  document.getElementById("blogModalClose").onclick = closeModals;
+  const projectClose = document.getElementById("modalClose");
+  const blogClose = document.getElementById("blogModalClose");
+
+  if (projectClose) projectClose.onclick = closeModals;
+  if (blogClose) blogClose.onclick = closeModals;
 
   window.onclick = (e) => {
     if (e.target.classList.contains("modal-overlay")) {
@@ -488,8 +670,10 @@ function initModalListeners() {
 }
 
 function closeModals() {
-  document.getElementById("projectModal").classList.remove("active");
-  document.getElementById("blogModal").classList.remove("active");
+  const projectModal = document.getElementById("projectModal");
+  const blogModal = document.getElementById("blogModal");
+  if (projectModal) projectModal.classList.remove("active");
+  if (blogModal) blogModal.classList.remove("active");
   document.body.style.overflow = "auto";
 }
 
@@ -569,6 +753,8 @@ function initChatWidget() {
   const iconClose = document.querySelector(".chat-icon-close");
   const suggestionChips = document.querySelectorAll(".suggestion-chip");
 
+  if (!toggleBtn || !panel) return;
+
   let isChatOpen = false;
 
   function toggleChat() {
@@ -586,7 +772,7 @@ function initChatWidget() {
   }
 
   toggleBtn.onclick = toggleChat;
-  closeBtn.onclick = toggleChat;
+  if (closeBtn) closeBtn.onclick = toggleChat;
 
   function addMessage(text, sender) {
     const el = document.createElement("div");
@@ -598,16 +784,18 @@ function initChatWidget() {
 
   function simulateAIResponse(query) {
     const q = query.toLowerCase();
-    let response = "I'm a simple AI assistant for this portfolio. I can answer questions about Alex's skills, projects, or contact info.";
+    let response = "I'm Joshua's AI assistant. I can answer questions about his skills, projects, or contact info.";
 
     if (q.includes("skill") || q.includes("tech") || q.includes("stack")) {
-      response = "Alex's main skills include React, Next.js, Node.js, TypeScript, and Python. He's a Full-Stack developer.";
+      response = "Joshua's main skills include React, Next.js, Node.js, TypeScript, Python, and Embedded Systems. He's a Full-Stack developer with IoT expertise. Check out the <a href='skills.html'>Skills page</a>!";
     } else if (q.includes("project") || q.includes("work") || q.includes("portfolio")) {
-      response = "Alex has built things like SynthWave Studio (a DAW in the browser) and Nebula Analytics. Check out the Projects section!";
+      response = "Joshua has built things like SynthWave Studio (a DAW in the browser) and Nebula Analytics. Check out the <a href='projects.html'>Projects page</a>!";
     } else if (q.includes("hire") || q.includes("available") || q.includes("freelance") || q.includes("contact")) {
-      response = "Yes, Alex is currently open to opportunities! You can email him at hello@alexchen.dev or use the contact form at the bottom.";
+      response = "Yes, Joshua is currently open to opportunities! You can reach him at joshuaishimwe88@gmail.com or visit the <a href='contact.html'>Contact page</a>.";
     } else if (q.includes("hello") || q.includes("hi") || q.includes("hey")) {
       response = "Hello! 👋 How can I help you today?";
+    } else if (q.includes("experience") || q.includes("career") || q.includes("job")) {
+      response = "Joshua has 4+ years of experience across full-stack development, embedded systems, and AI. Check out the <a href='experience.html'>Experience page</a>!";
     }
 
     addMessage(`<svg class="spinner" width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="31.4 31.4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="0 12 12;360 12 12" dur="1s" repeatCount="indefinite"/></circle></svg> Typing...`, "assistant");
@@ -618,16 +806,16 @@ function initChatWidget() {
     }, 800);
   }
 
-  form.onsubmit = (e) => {
-    e.preventDefault();
-    const txt = input.value.trim();
-    if (!txt) return;
-
-    addMessage(txt, "user");
-    input.value = "";
-
-    simulateAIResponse(txt);
-  };
+  if (form) {
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      const txt = input.value.trim();
+      if (!txt) return;
+      addMessage(txt, "user");
+      input.value = "";
+      simulateAIResponse(txt);
+    };
+  }
 
   suggestionChips.forEach(chip => {
     chip.onclick = () => {
@@ -644,14 +832,15 @@ function initChatWidget() {
 function initContactForm() {
   const form = document.getElementById("contactForm");
   const btn = document.getElementById("submitBtn");
-  const text = document.querySelector(".btn-text");
-  const loading = document.querySelector(".btn-loading");
-  const success = document.querySelector(".btn-success");
+  const text = btn ? btn.querySelector(".btn-text") : null;
+  const loading = btn ? btn.querySelector(".btn-loading") : null;
+  const success = btn ? btn.querySelector(".btn-success") : null;
+
+  if (!form || !btn) return;
 
   form.onsubmit = (e) => {
     e.preventDefault();
 
-    // Simulate API Call
     text.style.display = "none";
     loading.style.display = "flex";
     btn.disabled = true;
